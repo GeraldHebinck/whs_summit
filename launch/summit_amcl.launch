@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+<group ns="summit_xl">
+<!-- Karte map_server -->
+	<include file="$(find summit_xl_localization)/launch/map_server.launch">
+		<arg name="config_package" value="whs_summit"/>
+		<arg name="map_file" value="ero_complete.yaml"/>
+	</include>
+<!-- Roboter Localisation -->
+	<include file="$(find summit_xl_localization)/launch/amcl.launch"/>
+</group>
+</launch>
+
