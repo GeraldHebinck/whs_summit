@@ -3,7 +3,7 @@ footprint: [[0.375, -0.32], [0.375, 0.32], [-0.375,0.32], [-0.375, -0.32]]
 publish_frequency: 1.0
 
 inflation_layer:
-  inflation_radius: 0.3
+  inflation_radius: 0.32
 
 obstacle_laser_layer:
   obstacle_range: 2.5
