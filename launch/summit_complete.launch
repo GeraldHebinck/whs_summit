@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+	<!-- Summit_XL Bringup-->
+	<include file="$(find whs_summit)/launch/summit_bringup.launch"/>
+	<!-- Summit_XL Sensors-->
+	<include file="$(find whs_summit)/launch/summit_sensors.launch"/>
+    <!-- Summit_XL SLAM-->
+	<include file="$(find whs_summit)/launch/summit_slam.launch"/>
+    <!-- Summit_XL move_base-->
+	<include file="$(find whs_summit)/launch/summit_move.launch"/>
+</launch>
