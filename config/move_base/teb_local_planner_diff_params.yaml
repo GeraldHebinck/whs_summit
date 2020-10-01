@@ -17,19 +17,19 @@ TebLocalPlannerROS:
   feasibility_check_no_poses: 5
   publish_feedback: false
   shrink_horizon_backup: true
-  allow_init_with_backwards_motion: true
+  allow_init_with_backwards_motion: False
   exact_arc_length: false
   shrink_horizon_min_duration: 10
 
   # Robot
 
-  max_vel_x: 0.6 #1.2
-  max_vel_x_backwards: 0.15
-  max_vel_theta: 0.75
+  max_vel_x: 0.4 #1.2
+  max_vel_x_backwards: 0.11
+  max_vel_theta: 0.2
   max_vel_y: 0 # not used, is differential
   acc_lim_y: 0 # not used, is differential
   acc_lim_x: 0.2
-  acc_lim_theta: 0.2
+  acc_lim_theta: 0.11
   min_turning_radius: 0.0
   wheelbase: 0.0 # not used, is differential
   cmd_angle_instead_rotvel: false # not used, is differential
@@ -37,8 +37,8 @@ TebLocalPlannerROS:
     #type: "circular"
     #radius: 0.5 # for type "circular"
     type: "line"
-    line_start: [-0.035, 0.0] # for type "line"
-    line_end: [0.035, 0.0] # for type "line"
+    line_start: [-0.23, 0.0] # for type "line"
+    line_end: [0.23, 0.0] # for type "line"
     #front_offset: 0.2 # for type "two_circles"
     #front_radius: 0.2 # for type "two_circles"
     #rear_offset: 0.2 # for type "two_circles"
@@ -53,11 +53,11 @@ TebLocalPlannerROS:
 
   # Obstacles
 
-  min_obstacle_dist: 0.481 # minimum distance to obstacle: it depends on the footprint_model
+  min_obstacle_dist: 0.32 # minimum distance to obstacle: it depends on the footprint_model
   include_costmap_obstacles: True # use the local costmap
   costmap_obstacles_behind_robot_dist: 1.0 # distance at which obstacles behind the robot are taken into account
   obstacle_poses_affected: 30 # unused if legacy_obstacle_association is false
-  inflation_dist: 0.7 # greater than min_obstacle_dist to take effect
+  inflation_dist: 0.41 # greater than min_obstacle_dist to take effect
   legacy_obstacle_association: false
   obstacle_association_force_inclusion_factor: 1.5 # the obstacles that will be taken into account are those closer than min_obstacle_dist*factor, if legacy is false
   obstacle_association_cutoff_factor: 5.0 # the obstacles that are further than min_obstacle_dist * factor will not be taken into account, if legacy is false
@@ -85,7 +85,7 @@ TebLocalPlannerROS:
   weight_acc_lim_y: 0
   weight_acc_lim_theta: 1
   weight_kinematics_nh: 10000 # is a nonholonomic robot
-  weight_kinematics_forward_drive: 10 # prefer forward driving, for differential
+  weight_kinematics_forward_drive: 1000 # prefer forward driving, for differential
   weight_kinematics_turning_radius: 1 # prefer turns that respect the min_turning_radius, not used if differential (min_turning_radius = 0)
   weight_optimaltime: 10 # prefer trajectories with less transition time
   weight_obstacle: 50 # prefer trajectories that respect the min_obstacle_dist
