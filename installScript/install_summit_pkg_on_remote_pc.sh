@@ -31,8 +31,8 @@ sudp apt install ros-melodic-robotnik-base-hw-lib ros-melodic-robotnik-msgs
 #sudo apt install ros-melodic-summit-xl-robot-control -y //Not avialable
 
 git clone https://github.com/RobotnikAutomation/summit_xl_sim
-git clone https://github.com/RobotnikAutomation/summit_xl_common
-git clone https://github.com/RobotnikAutomation/robotnik_sensors
+git clone https://github.com/GeraldHebinck/summit_xl_common
+git clone https://github.com/GeraldHebinck/robotnik_sensors
 git clone https://github.com/RobotnikAutomation/robotnik_base_hw.git -b melodic-devel
 git clone https://github.com/rst-tu-dortmund/costmap_prohibition_layer.git
 git clone https://github.com/ros-geographic-info/geographic_info.git
@@ -40,7 +40,7 @@ git clone https://github.com/ros-geographic-info/unique_identifier.git
 git clone https://github.com/orbbec/ros_astra_camera
 git clone https://github.com/orbbec/ros_astra_launch
 git clone https://github.com/alin185/whs_summit
-git clone https://github.com/geraldhebinck/summit_xl_controller
+git clone https://github.com/GeraldHebinck/summit_xl_controller
 
 echo -e "\033[42m ---------- Aktualisiere alle Abhaengigkeiten der ROS-Pakete ---------- \033[0m"
 source ~/.bashrc
