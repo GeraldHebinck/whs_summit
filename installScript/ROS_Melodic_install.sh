@@ -1,7 +1,7 @@
 # Basiert auf ROS_Melodic_Installation_auf_Remote_PC.sh
 # von OJ fuer robotik.bocholt@w-hs.de
 # ROS auf einem Rechner mit Ubuntu Bionic 18.04 installieren
-# SS2020 Hebinck, Heid
+# 06.10.2020 Hebinck, Heid
 
 #!/bin/bash
 echo -e "\033[1;92m ---------- Skript zur Installation von ROS Melodic auf Ubuntu 18.04  ------------ \033[0m "

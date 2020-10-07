@@ -42,10 +42,41 @@ git clone https://github.com/orbbec/ros_astra_launch
 git clone https://github.com/alin185/whs_summit
 git clone https://github.com/GeraldHebinck/summit_xl_controller
 
+echo "source ~/catkin_ws/src/whs_summit/installScript/summitxl_params.env" >> ~/.bashrc
+
+
+echo -e "\033[42m ---------- Installation PEAK-CAN ---------- \033[0m"
+sudo apt install libpopt-dev
+cd ~/Downloads 
+wget http://www.peak-system.com/fileadmin/media/linux/files/peak-linux-driver-8.10.2.tar.gz
+sudo tar -xzf peak-linux-driver-8.10.2.tar.gz
+cd peak-linux-driver-8.10.2
+sudo make clean
+sudo make NET=NO_NETDEV_SUPPORT
+sudo make install
+sudo cp ~/catkin_ws/src/whs_summit/installScript/46-pcan.rules /etc/udev/rules.d/
+sudo service udev reload
+sudo service udev restart
+sudo udevadm trigger
+sudo rmmod pcan
+sudo modprobe pcan
+
+echo -e "\033[42m ---------- Installation GeographicLib ---------- \033[0m"
+sudo apt install geographiclib-tools 
+cd ~/Downloads
+wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
+chmod +x install_geographiclib_datasets.sh
+sudo ./install_geographiclib_datasets.sh
+
+echo -e "\033[42m ---------- Installation PS4 Controller ---------- \033[0m"
+sudo apt-get install python-pip
+sudo /usr/bin/python -m pip install ds4drv
+sudo cp ~/catkin_ws/src/whs_summit/installScript/ds4drv.conf /etc
+
 echo -e "\033[42m ---------- Aktualisiere alle Abhaengigkeiten der ROS-Pakete ---------- \033[0m"
 source ~/.bashrc
 rosdep update
-rosdep install --from-paths . --ignore-src -r -y
+rosdep install --from-paths ~/catkin_ws/src --ignore-src -r -y
 
 echo -e "\033[42m ---------- Ausfuehren von catkin build ---------- \033[0m"
 cd ~/catkin_ws/
