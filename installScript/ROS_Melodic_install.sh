@@ -21,8 +21,6 @@ sudo apt install ros-melodic-desktop-full -y
 
 echo -e "\033[42m ---------- Erstelle catkin_ws  ------------ \033[0m "
 mkdir -p ~/catkin_ws/src
-mkdir -p ~/catkin_ws/devel
-touch ~/catkin_ws/devel/setup.bash
 
 echo -e "\033[42m ---------- Konfiguriere .bashrc ------------ \033[0m "
 echo "### ROS - Umgebungsvariablen ###" >> ~/.bashrc
