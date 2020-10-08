@@ -26,8 +26,9 @@ sudo apt install ros-melodic-urg-node -y
 sudo apt install ros-melodic-depthimage-to-laserscan -y
 sudo apt install ros-melodic-ira_laser_tools -y
 sudo apt install ros-melodic-rgbd-launch ros-melodic-libuvc ros-melodic-libuvc-camera ros-melodic-libuvc-ros -y
-sudo apt install libsdl-image1.2-dev libsdl1.2-dev
-sudp apt install ros-melodic-robotnik-base-hw-lib ros-melodic-robotnik-msgs
+sudo apt install libsdl-image1.2-dev libsdl1.2-dev -y
+sudp apt install ros-melodic-robotnik-base-hw-lib ros-melodic-robotnik-msgs -y
+sudo apt install ros-melodic-imu-tools -y
 #sudo apt install ros-melodic-summit-xl-robot-control -y //Not avialable
 
 git clone https://github.com/RobotnikAutomation/summit_xl_sim
